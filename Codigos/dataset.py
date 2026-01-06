@@ -1,5 +1,6 @@
 import os
 import torch
+import cv2
 from torch.utils.data import Dataset
 
 from lectura import leer_imagen, prep_mascara
@@ -32,6 +33,10 @@ class XView2Dataset(Dataset):
 
         imagen = leer_imagen(ruta_img)
         mascara = prep_mascara(ruta_mask)
+    
+        #Redimensionar a 256, downscale.
+        imagen = cv2.resize(imagen, (256, 256), interpolation=cv2.INTER_LINEAR)
+        mascara = cv2.resize(mascara, (256, 256), interpolation=cv2.INTER_NEAREST)
 
         # Imagen → Tensor [3,H,W]
         imagen = torch.from_numpy(imagen).permute(2, 0, 1).float() / 255.0
