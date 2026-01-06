@@ -2,4 +2,7 @@ Reporte_Latex/
 Datasets/
 P_VA/
 .ipynb_checkpoints/
+# Python cache
 __pycache__/
+*.pyc
+*.pyo
