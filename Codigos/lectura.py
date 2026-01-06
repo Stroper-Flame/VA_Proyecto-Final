@@ -23,3 +23,17 @@ def dir_imagenes(directorio, ext=".png"):
             ruta = os.path.join(directorio, archivo)
             imagenes.append(ruta)
     return sorted(imagenes)
+
+def prep_mascara(ruta_mascara, normalizar =True):
+    mascara = Image.open(ruta_mascara).convert('L')                                             #Leer la mascara de los edificios y hacerle una binarización
+
+    if mascara is None:
+        raise FileNotFoundError(f"No se pudo leer la máscara: {ruta_mascara}")
+    
+    #Binarización de la máscara
+    mascara = np.array(mascara)
+
+    mascara = (mascara > 0).astype(np.uint8)
+    if normalizar:
+        mascara = mascara.astype(np.float32)
+    return mascara
