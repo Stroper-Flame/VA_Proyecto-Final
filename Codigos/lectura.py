@@ -5,7 +5,7 @@ import numpy as np
 
 
 def leer_imagen(ruta_imagen):
-    imagen=Image.opend(ruta_imagen).convert('RGB')
+    imagen=Image.open(ruta_imagen).convert('RGB')
     if imagen is None:                                                                                 #Funcion para leer las imagenes
         raise FileNotFoundError(f"No se pudo leer la imagen en la ruta: {ruta_imagen}")     
     return np.array(imagen)
