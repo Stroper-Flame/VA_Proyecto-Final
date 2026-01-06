@@ -6,3 +6,4 @@ P_VA/
 __pycache__/
 *.pyc
 *.pyo
+.vscode/
