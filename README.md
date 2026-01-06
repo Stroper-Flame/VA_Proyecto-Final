@@ -10,4 +10,4 @@ Documentación original del Dataset: https://xview2.org/
 Advertencia: El dataset pesa poco mas de 30 GB
 
 
-Video Explicativo del proyecto: https://youtu.be/pTrzPZiVAwk
+Video Explicativo del proyecto: https://youtu.be/g3sa590xt2o
